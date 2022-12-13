@@ -10,7 +10,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [],
-    css: []
+    css: [],
   },
 
   css: [],
@@ -19,13 +19,9 @@ export default {
 
   components: true,
 
-  buildModules: [],
+  buildModules: ["@nuxtjs/moment"],
 
-  modules: [
-    "@nuxtjs/toast",
-    "@nuxtjs/vuetify",
-    "@nuxtjs/universal-storage",
-  ],
+  modules: ["@nuxtjs/toast", "@nuxtjs/vuetify", "@nuxtjs/universal-storage"],
 
   toast: {
     position: "top-right",
@@ -36,5 +32,4 @@ export default {
   server: {
     port: 3000,
   },
-
 };

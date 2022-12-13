@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const state = () => ({
   items: [],
   template: [
@@ -37,6 +39,14 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ state, dispatch }) {
+    console.log(moment.weekdays());
+
+    // var dateFormat = "DD.MM.YYYY HH:mm:ss";
+    // console.log(
+    //   "Is valid: 12.01.2021 15:01:10 -> ",
+    //   moment("12.01.2021 15:01:10", dateFormat, true).isValid()
+    // );
+
     var data =
       this.$storage.getUniversal("items") !== undefined
         ? this.$storage.getUniversal("items")

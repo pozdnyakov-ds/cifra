@@ -19,8 +19,8 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <v-text-field v-model="item.datetime" label="Date and time" type="text" counter=32 outlined
-                                :rules="[required('Date and time')]" />
+                            <v-text-field v-model="item.datetime" label="Date and time" type="text" outlined
+                                :rules="[required('Date and time'), validDateTime('Date and time')]" />
                         </div>
                                                         
                     </v-container>
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
     props: {
         value: Boolean
@@ -53,7 +55,7 @@ export default {
                 id: 0,
                 title: '',
                 price: 0.00,
-                datetime: ''
+                datetime: '24.12.2022 15:00:00'
             },
             required(propertyType) {
                 return v => v && v.length > 0 || `Нужно указать ${propertyType}`
@@ -66,6 +68,10 @@ export default {
             },
             minPrice(propertyType, minValue) { 
                 return v => v && v >= minValue || `${propertyType} должно быть больше ${minValue}!`
+            },
+            validDateTime(propertyType) { 
+                var dateFormat = "DD.MM.YYYY HH:mm:ss";
+                return v => v && moment(v, dateFormat, true).isValid() || `Укажите ${propertyType} в указанном формате!`
             }
         }
     },
