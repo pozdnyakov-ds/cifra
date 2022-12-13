@@ -28,10 +28,10 @@
                 </v-form>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn style="background-color: #999;" color="white" text @click.stop="show = false">
+                    <v-btn color="grey" style="color: white;" @click.stop="show = false">
                         Close
                     </v-btn>
-                    <v-btn style="background-color: red;" color="white" text @click.stop="addItem(item)" :disabled="!valid">
+                    <v-btn color="error" @click.stop="addItem(item)" :disabled="!valid">
                         Add
                     </v-btn>
                     
