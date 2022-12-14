@@ -19,6 +19,10 @@ export default {
 
   components: true,
 
+  build: {
+    postcss: null,
+  },
+
   buildModules: ["@nuxtjs/moment"],
 
   modules: ["@nuxtjs/toast", "@nuxtjs/vuetify", "@nuxtjs/universal-storage"],

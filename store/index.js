@@ -39,7 +39,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ state, dispatch }) {
-    console.log(moment.weekdays());
+    // console.log(moment.weekdays());
 
     // var dateFormat = "DD.MM.YYYY HH:mm:ss";
     // console.log(
